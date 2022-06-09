@@ -12,6 +12,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import Home from './Screens/Home';
 import AddCrypto from './Screens/AddCrypto';
+import CryptosContextProvider from './store/context/addCrypto-context';
 
 const Stack = createNativeStackNavigator();
 

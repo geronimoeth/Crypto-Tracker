@@ -1,6 +1,15 @@
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  FlatList,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import styled from 'styled-components/native';
+import CryptoList from './CryptoList';
 
 const MyText = styled.Text`
   font-size: 25px;
@@ -36,7 +45,7 @@ const CryptoContainer = styled.View`
   align-items: center;
 `;
 
-const CryptoList = ({navigation}) => {
+const Home = ({navigation}) => {
   return (
     <View>
       <Nav>
@@ -45,9 +54,9 @@ const CryptoList = ({navigation}) => {
       </Nav>
 
       <CryptoContainer>
-        <View>
-          <Text>Crypto's here</Text>
-        </View>
+        <ScrollView>
+          <CryptoList />
+        </ScrollView>
 
         <TouchableOpacity
           onPress={() => {
@@ -60,6 +69,6 @@ const CryptoList = ({navigation}) => {
   );
 };
 
-export default CryptoList;
+export default Home;
 
 const styles = StyleSheet.create({});
