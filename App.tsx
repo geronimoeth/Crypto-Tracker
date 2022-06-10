@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
-import Home from './Screens/Home';
-import AddCrypto from './Screens/AddCrypto';
-import CryptosContextProvider from './store/context/addCrypto-context';
+import Home from './screens/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,11 +22,6 @@ const App = () => {
           name="Home"
           options={{headerShown: false}}
           component={Home}
-        />
-        <Stack.Screen
-          name="AddCrypto"
-          options={{headerShown: false}}
-          component={AddCrypto}
         />
       </Stack.Navigator>
     </NavigationContainer>
