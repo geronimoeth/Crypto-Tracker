@@ -1,4 +1,4 @@
-import {View, TouchableOpacity} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import CryptoList from './CryptoList';
 
@@ -8,25 +8,28 @@ import {
   ProfilePic,
   TouchableText,
   CryptoContainer,
+  AddCryptoCurrency,
 } from '../styles/styles';
 
 const Home = ({navigation}: any) => (
-  <View style={{flex: 1}}>
+  <View style={styles.flex}>
     <Nav>
       <MyText>CryptoTracker Pro</MyText>
       <ProfilePic source={require('../Pictures/profilepicture.jpeg')} />
     </Nav>
-    <CryptoContainer style={{flex: 1}}>
+    <CryptoContainer style={styles.flex}>
       <CryptoList />
     </CryptoContainer>
-    <TouchableOpacity
-      style={{marginBottom: 10, justifyContent: 'center', alignSelf: 'center'}}
-      onPress={() => {
-        navigation.navigate('Home');
-      }}>
+    <AddCryptoCurrency onPress={() => navigation.navigate('AddCrypto')}>
       <TouchableText>+ Add a Cryptocurrency</TouchableText>
-    </TouchableOpacity>
+    </AddCryptoCurrency>
   </View>
 );
 
 export default Home;
+
+const styles = StyleSheet.create({
+  flex: {
+    flex: 1,
+  },
+});

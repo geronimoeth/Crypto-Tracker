@@ -1,20 +1,29 @@
-import {Text, View, FlatList, StyleSheet} from 'react-native';
+import {Text, View, FlatList} from 'react-native';
 import React, {useEffect, useState} from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {cryptoData} from '../hardcode/messari';
 import Card from './Card';
-import {iteratorSymbol} from 'immer/dist/internal';
+import {CryptoData} from '../interfaces/CryptoDataInterface';
+import {fetchAllCryptos} from '../store/cryptos';
+import {useDispatch, useSelector} from 'react-redux';
 
 const CryptoList = () => {
-  const [listData, setListData]: any = useState([]);
+  const dispatch = useDispatch();
+
+  const {list, show} = useSelector(state => state.cryptos);
+
+  useEffect(() => {
+    dispatch(fetchAllCryptos());
+  }, []);
+
+  const renderCryptoCard = ({item}) => <Card item={item} />;
 
   return (
     <View>
-      {cryptoData.length > 0 ? (
+      {show.length > 0 ? (
         <FlatList
-          data={cryptoData}
+          data={show}
           keyExtractor={item => item.id}
-          renderItem={({item}) => <Card item={item} />}
+          renderItem={renderCryptoCard}
         />
       ) : (
         <Text>No coins added yet</Text>

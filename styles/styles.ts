@@ -14,7 +14,7 @@ export const Nav = styled.View`
   height: 140px;
   padding-top: 20px;
   flex-direction: row;
-  background-color: ${Theme.colors['dark-blue']};
+  background-color: ${Theme.colors.darkBlue};
 `;
 
 export const ProfilePic = styled.Image`
@@ -22,6 +22,12 @@ export const ProfilePic = styled.Image`
   width: 45px;
   height: 45px;
   border-radius: 50px;
+`;
+
+export const AddCryptoCurrency = styled.TouchableOpacity`
+  margin-bottom: 10px;
+  justify-content: ;center; 
+  align-self: center;
 `;
 
 export const TouchableText = styled.Text`
@@ -103,4 +109,11 @@ export const ButtonSave = styled.TouchableOpacity`
   height: 40px;
   width: 90px;
   border-radius: 5px;
+`;
+
+export const PriceChangedTextLow = styled.Text`
+  color: red;
+`;
+export const PriceChangedTextHigh = styled.Text`
+  color: green;
 `;
