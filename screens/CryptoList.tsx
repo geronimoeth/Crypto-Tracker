@@ -1,6 +1,5 @@
 import {Text, View, FlatList} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import {cryptoData} from '../hardcode/messari';
+import React, {useEffect} from 'react';
 import Card from './Card';
 import {CryptoData} from '../interfaces/CryptoDataInterface';
 import {fetchAllCryptos} from '../store/cryptos';
@@ -9,7 +8,7 @@ import {useDispatch, useSelector} from 'react-redux';
 const CryptoList = () => {
   const dispatch = useDispatch();
 
-  const {list, show} = useSelector(state => state.cryptos);
+  const {show} = useSelector(state => state.cryptos);
 
   useEffect(() => {
     dispatch(fetchAllCryptos());

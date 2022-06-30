@@ -28,6 +28,7 @@ export const AddCryptoCurrency = styled.TouchableOpacity`
   margin-bottom: 10px;
   justify-content: ;center; 
   align-self: center;
+  padding-bottom: 20px;
 `;
 
 export const TouchableText = styled.Text`
@@ -48,7 +49,7 @@ export const CardsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   margin-top: 10px;
-  width: 75%;
+  width: 80%;
   align-self: center;
 `;
 
@@ -72,6 +73,8 @@ export const GoBack = styled.TouchableOpacity`
 export const GoBackText = styled.Text`
   color: grey;
   font-size: 17px;
+  margin-left: 10px;
+  margin-top: 10px;
 `;
 
 export const Container = styled.View`
