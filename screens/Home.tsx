@@ -1,7 +1,6 @@
 import {View, StyleSheet} from 'react-native';
 import React from 'react';
 import CryptoList from './CryptoList';
-
 import {
   MyText,
   Nav,
@@ -10,6 +9,7 @@ import {
   CryptoContainer,
   AddCryptoCurrency,
 } from '../styles/styles';
+import {styles} from '../styles/stylesheet';
 
 const Home = ({navigation}: any) => (
   <View style={styles.flex}>
@@ -27,9 +27,3 @@ const Home = ({navigation}: any) => (
 );
 
 export default Home;
-
-const styles = StyleSheet.create({
-  flex: {
-    flex: 1,
-  },
-});

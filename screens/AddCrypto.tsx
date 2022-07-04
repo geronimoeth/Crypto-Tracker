@@ -11,6 +11,7 @@ import {
 } from '../styles/styles';
 import {toAddNewCrypto} from '../store/cryptos';
 import {useDispatch, useSelector} from 'react-redux';
+import {styles} from '../styles/stylesheet';
 
 const AddCrypto = ({navigation}: any) => {
   const [input, setInput] = useState('');
@@ -21,31 +22,27 @@ const AddCrypto = ({navigation}: any) => {
   const saveCrypto = () => {
     dispatch(toAddNewCrypto(input));
     setInput('');
-    navigation.navigate('Home');
+    navigation.goBack();
   };
 
   return (
     <AddCryptoView>
       <GoBack
         onPress={() => {
-          navigation.navigate('Home');
+          navigation.goBack();
         }}>
         <GoBackText> &#8592; Back to list</GoBackText>
       </GoBack>
       <Container>
         <AddCurrency>Add a Cryptocurrency</AddCurrency>
-
         <IntroduceCryptoInput
-          onChangeText={(text: string) => setInput(text)}
+          onChangeText={setInput}
           placeholder="Use a name or ticker symbol..."
           placeholderTextColor="grey"
           value={input}
         />
-        <ButtonSave
-          onPress={() => {
-            saveCrypto();
-          }}>
-          <Text style={{color: 'grey'}}>Save</Text>
+        <ButtonSave onPress={saveCrypto}>
+          <Text style={styles.grey}>Save</Text>
         </ButtonSave>
       </Container>
     </AddCryptoView>

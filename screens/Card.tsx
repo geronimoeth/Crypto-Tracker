@@ -1,4 +1,4 @@
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, Text, View} from 'react-native';
 import React from 'react';
 import {
   CardsContainer,
@@ -7,9 +7,10 @@ import {
   PriceChangedTextLow,
 } from '../styles/styles';
 import {CryptoData} from '../interfaces/CryptoDataInterface';
+import {styles} from '../styles/stylesheet';
 
 const Card = ({item}) => {
-  const {symbol, name, market_data, image} = item;
+  const {symbol, name, market_data, image}: CryptoData = item;
 
   const imgUri = image.large;
   const priceInUsd = market_data.current_price.usd;
@@ -42,21 +43,3 @@ const Card = ({item}) => {
 };
 
 export default Card;
-
-const styles = StyleSheet.create({
-  bold: {
-    fontWeight: 'bold',
-  },
-  img: {
-    width: 48,
-    height: 48,
-  },
-  prices: {
-    alignItems: 'flex-end',
-    paddingTop: 7,
-  },
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-});
