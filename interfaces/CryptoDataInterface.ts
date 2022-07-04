@@ -1,5 +1,5 @@
 export interface CryptoData {
-  id?: string;
+  id: string;
   symbol: string;
   name: string;
   image: {large: string};
