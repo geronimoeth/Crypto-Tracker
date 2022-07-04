@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import Theme from './Theme';
 
 export const styles = StyleSheet.create({
   bold: {
@@ -20,6 +21,6 @@ export const styles = StyleSheet.create({
     flex: 1,
   },
   grey: {
-    color: 'grey',
+    color: Theme.colors.grey,
   },
 });

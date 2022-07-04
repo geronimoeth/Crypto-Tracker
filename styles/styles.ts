@@ -71,7 +71,7 @@ export const GoBack = styled.TouchableOpacity`
 `;
 
 export const GoBackText = styled.Text`
-  color: grey;
+  color: ${Theme.colors.grey};
   font-size: 17px;
   margin-left: 10px;
   margin-top: 10px;
@@ -95,7 +95,7 @@ export const AddCurrency = styled.Text`
 export const IntroduceCryptoInput = styled.TextInput`
   display: flex;
   padding-left: 7px;
-  background-color: white;
+  background-color: ${Theme.colors.white};
   width: 300px;
   height: 40px;
   border: solid;
@@ -108,15 +108,15 @@ export const ButtonSave = styled.TouchableOpacity`
   align-items: center;
   justify-content: center;
   margin-top: 12px;
-  background-color: #fbd24d;
+  background-color: ${Theme.colors.orangeButtonColor};
   height: 40px;
   width: 90px;
   border-radius: 5px;
 `;
 
 export const PriceChangedTextLow = styled.Text`
-  color: red;
+  color: ${Theme.colors.priceDown};
 `;
 export const PriceChangedTextHigh = styled.Text`
-  color: green;
+  color: ${Theme.colors.priceUp};
 `;
